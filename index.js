@@ -1,17 +1,11 @@
 const express = require("express");
 const app = express();
-const https = require("https");
 const mongoose = require("mongoose");
 const keys = require("./config/keys");
 const cookieSession = require("cookie-session");
 const passport = require("passport");
 const path = require("path");
 const fs = require("fs");
-
-const options = {
-  key: fs.readFileSync(path.resolve(__dirname, "ssl_cert/test-key.pem")),
-  cert: fs.readFileSync(path.resolve(__dirname, "ssl_cert/test-cert.pem"))
-}
 
 mongoose.connect(keys.mongoURI);
 require("./models/User");
