@@ -1,10 +1,10 @@
-import { FETCH_USER, LOG_OUT } from "../actions/types";
+import * as actionTypes from "../actions/actionTypes";
 
 export default function(state = null, action) {
   switch (action.type) {
-    case FETCH_USER:
-      return action.payload.passport.user || false;
-    case LOG_OUT:
+    case actionTypes.FETCH_USER:
+      return action.payload || false;
+    case actionTypes.LOG_OUT:
       return action.payload;
     default:
       return state;

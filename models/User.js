@@ -1,9 +1,10 @@
 const mongoose = require("mongoose");
-const {Schema} = mongoose;
+const { Schema } = mongoose;
 
 const UserSchema = new Schema({
-    googleId: String,
-    facebookId: String
+  googleId: String,
+  fullName: String,
+  credits: { type: Number, default: 0 }
 });
 
-mongoose.model('users', UserSchema);
+mongoose.model("users", UserSchema);

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import * as actions from "../actions";
+import Payments from "./Payments";
 
 class Header extends Component {
   onLogout = () => {
@@ -25,13 +26,16 @@ class Header extends Component {
         return (
           <ul id="nav-mobile" className="right">
             <li>
-              <NavLink to="/">Home</NavLink>
+              <Payments />
             </li>
-            <li>
-              <NavLink to="/surveys">Survays</NavLink>
+            <li style={{ margin: "0px 10px" }}>
+              Credits : {this.props.auth.credits}
             </li>
+            <li style={{ margin: "0px 10px" }}>{this.props.auth.fullName}</li>
             <li>
-              <button onClick={this.onLogout}>Logout</button>
+              <NavLink to="" onClick={this.onLogout}>
+                Logout
+              </NavLink>
             </li>
           </ul>
         );
@@ -41,9 +45,12 @@ class Header extends Component {
     return (
       <nav>
         <div className="nav-wrapper">
-          <a href="/" className="brand-logo">
+          <NavLink
+            to={this.props.auth ? "/surveys" : "/"}
+            className="brand-logo"
+          >
             React App
-          </a>
+          </NavLink>
           {this.renderContent()}
         </div>
       </nav>
