@@ -1,0 +1,27 @@
+{
+    "extends": [
+        "airbnb",
+        "pritter"
+    ],
+    "env": {
+        "node": true,
+        "es6": true,
+        "browser": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        "linebreak-style": "off",
+        "no-unused-vars": [
+            "error",
+            {
+                "args": "none"
+            }
+        ]
+    }
+}

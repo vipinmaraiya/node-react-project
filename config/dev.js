@@ -6,5 +6,7 @@ module.exports = {
     "mongodb://vipinsh:vipinsh@ds117719.mlab.com:17719/react-app-db-dev",
   cookieKey: "vipinsh-dev",
   stripePublishableKey: "pk_test_zGHQlJsU9dT4q2d0Lua2ZQo6",
-  stripeSecretKey: "sk_test_CCAhwdNmV8WY0sgAI5Txwt4c"
+  stripeSecretKey: "sk_test_CCAhwdNmV8WY0sgAI5Txwt4c",
+  sendGridKey:
+    "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"
 };

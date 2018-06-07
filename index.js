@@ -11,8 +11,10 @@ const bodyParser = require("body-parser");
 mongoose.connect(keys.mongoURI);
 
 require("./models/User");
+require("./models/Survey");
 require("./services/passport");
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(
   cookieSession({
@@ -26,6 +28,7 @@ app.use(passport.session());
 
 require("./routes/authRoutes")(app);
 require("./routes/billingRoutes")(app);
+require("./routes/surveyRoutes")(app);
 
 app.use(express.static(path.resolve("./client/build")));
 app.get("*", (req, res) => {
